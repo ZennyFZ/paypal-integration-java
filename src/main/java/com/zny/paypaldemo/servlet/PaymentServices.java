@@ -7,8 +7,8 @@ import com.paypal.base.rest.*;
 import com.zny.paypaldemo.dto.OrderDetail;
 
 public class PaymentServices {
-    private static final String CLIENT_ID = "AbDUfqmPoPFK7Uwcn-PHxeFES-wniOnUdB3KEi_RY_MAopZ0304QeyTYTkoN5ihgO-8ISVHJNVwWaeX5";
-    private static final String CLIENT_SECRET = "EHxXcIm6IxsQaXoQ9lLQp-btZWUGvcUyDshaop1UyTm574ummqDraahb8-QS3sfwxoimYA5VRQ6nZ8pT";
+    private static final String CLIENT_ID = "";
+    private static final String CLIENT_SECRET = "";
     private static final String MODE = "sandbox";
 
     public String authorizePayment(OrderDetail orderDetail)
@@ -104,7 +104,7 @@ public class PaymentServices {
     }
 
     public Payment getPaymentDetails(String paymentId) throws PayPalRESTException {
-        APIContext apiContext = new APIContext("AbDUfqmPoPFK7Uwcn-PHxeFES-wniOnUdB3KEi_RY_MAopZ0304QeyTYTkoN5ihgO-8ISVHJNVwWaeX5", "EHxXcIm6IxsQaXoQ9lLQp-btZWUGvcUyDshaop1UyTm574ummqDraahb8-QS3sfwxoimYA5VRQ6nZ8pT", "sandbox");
+        APIContext apiContext = new APIContext("", "sandbox");
         return Payment.get(apiContext, paymentId);
     }
 
@@ -115,7 +115,7 @@ public class PaymentServices {
 
         Payment payment = new Payment().setId(paymentId);
 
-        APIContext apiContext = new APIContext("AbDUfqmPoPFK7Uwcn-PHxeFES-wniOnUdB3KEi_RY_MAopZ0304QeyTYTkoN5ihgO-8ISVHJNVwWaeX5", "EHxXcIm6IxsQaXoQ9lLQp-btZWUGvcUyDshaop1UyTm574ummqDraahb8-QS3sfwxoimYA5VRQ6nZ8pT", "sandbox");
+        APIContext apiContext = new APIContext("", "", "sandbox");
 
         return payment.execute(apiContext, paymentExecution);
     }
